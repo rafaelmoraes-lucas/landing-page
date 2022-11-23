@@ -1,0 +1,110 @@
+.header .header-container .nav ul {
+    display: flex;
+}
+
+.header .nav ul li a {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+}
+
+.header .nav ul li a:hover {
+    color: #fff;
+    background-color: coral;
+}
+
+/* RESPONSIVE */
+.header .header-container .nav .menu{
+    display: none;
+    width: 60px;
+    height: 60px;
+    align-self: flex-end;
+}
+
+.header .header-container .nav label {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header .header-container .nav .menu .hamburguer {
+    background-color: #000;
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.header .header-container .nav .menu .hamburguer::before,
+.header .header-container .nav .menu .hamburguer::after {
+    background-color: #000;
+    position: absolute;
+    display: block;
+    content: '';   
+    width: 100%;
+    height: 100%;  
+    transition: 0.2s ease-in-out;  
+} 
+
+.header .header-container .nav .menu .hamburguer::before {
+    top: -10px;
+}
+
+.header .header-container .nav .menu .hamburguer::after {
+    bottom: -10px;
+}
+
+.header .header-container .nav input {
+    display: none;
+}
+
+.header .header-container .nav input:checked ~label .hamburguer {
+    transform: rotate(45deg);
+}
+
+.header .header-container .nav input:checked ~label .hamburguer::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.header .header-container .nav input:checked ~label .hamburguer::after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .header .header-container .nav .menu {
+        display: block;
+    }
+
+    .header .header-container .nav ul {
+        display: none;
+        width: 200px;
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .header .header-container .nav input:checked ~ul {
+        display: block;
+    }
+
+    .header .header-container .nav {
+        position: absolute;
+        top: 8px;
+        right: 0;
+        z-index: 1;
+        right: 20px;
+    }
+
+    .header .header-container .nav ul a {
+        text-align: center;
+        padding: 20px;
+        display: block;
+    }
+}
+
